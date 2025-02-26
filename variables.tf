@@ -43,10 +43,11 @@ variable "routetable" {
 variable "lognalyticworkspace" {
   default = "sbx-ws"
 }
+*/
 variable "customownerrole" {
   default = "sbx-owner-role"
 }
-
+/*
 variable "eventhubnamespace" {
   default = "sbx-eventhub09090808s"
 }
