@@ -1,21 +1,30 @@
 pipeline {
     agent any
-
+    tools {
+       terraform 'terraform'
+    }
     stages {
-        stage('Checkout') {
-            steps {
-                checkout scm
+        stage('Git checkout') {
+           steps{
+                git branch: 'main', url: 'https://github.com/Shilpaj2/sandboxterraform'
             }
         }
-        stage('Terraform Init') {
-            steps {
-                sh 'cd /path/to/your/terraform/project && terraform init'
+        stage('terraform format check') {
+            steps{
+                sh 'terraform fmt'
             }
         }
-        stage('Terraform Apply') {
-            steps {
-                sh 'cd /path/to/your/terraform/project && terraform apply -auto-approve'
+        stage('terraform Init') {
+            steps{
+                sh 'terraform init'
+            }
+        }
+        stage('terraform apply') {
+            steps{
+                sh 'terraform apply --auto-approve'
             }
         }
     }
+
+    
 }
