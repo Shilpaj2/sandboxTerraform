@@ -200,7 +200,6 @@ data "azurerm_resource_group" "rg" {
   name = azurerm_resource_group.rg.name
 }
   */
-/*
 resource "azurerm_role_definition" "customrole" {
   name        = var.customownerrole
   scope       = data.azurerm_resource_group.rg.id
@@ -247,7 +246,6 @@ resource "azurerm_role_definition" "customrole" {
     azurerm_resource_group.rg.id # /subscriptions/00000000-0000-0000-0000-000000000000
   ]
 }
-*/
 /*
 resource "azuread_group" "aad-owner" {
   display_name     = "Sandbox Owners"
