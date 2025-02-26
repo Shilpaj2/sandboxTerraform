@@ -8,6 +8,7 @@ variable "location" {
 variable "tag" {
   default = "sandboxX"
 }
+/*
 variable "vnetname" {
   default = "sandboxX-vnet"
 }
@@ -128,3 +129,4 @@ variable "disabled_policies_foundations" {
     "Public network access should be disabled for Batch accounts"
   ]
 }
+*/
