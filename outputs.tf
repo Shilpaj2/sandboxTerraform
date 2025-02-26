@@ -2,7 +2,6 @@
 output "resource_group_name" {
   value = azurerm_resource_group.rg.name
 }
-*/
 output "event_hub_namespace_name" {
   value = azurerm_eventhub_namespace.eventhub_namespace.name
 }
@@ -40,3 +39,4 @@ output "log_storageaccount_key" {
 output "storage_account_name" {
   value = azurerm_storage_account.log_storage.name
 }
+*/
