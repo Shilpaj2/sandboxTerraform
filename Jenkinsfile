@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git checkout') {
            steps{
-                git branch: 'main', url: 'https://github.com/Shilpaj2/sandboxterraform'
+                git 'https://github.com/Shilpaj2/sandboxterraform'
             }
         }
         stage('terraform format check') {
