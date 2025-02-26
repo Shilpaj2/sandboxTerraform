@@ -195,7 +195,6 @@ resource "azurerm_bastion_host" "example" {
     public_ip_address_id = azurerm_public_ip.bastionpip.id
   }
 }
-*/
 ### Create Custom role
 data "azurerm_resource_group" "rg" {
   name = azurerm_resource_group.rg.name
@@ -252,13 +251,13 @@ resource "azuread_group" "aad-owner" {
   security_enabled = true
   # members = [data.azurerm_client_config.current.object_id ]
 }
-/*
+
 resource "azurerm_role_assignment" "customrole-owner-assignment" {
   principal_id       = azuread_group.aad-owner.object_id
   scope              = azurerm_resource_group.rg.id
   role_definition_id = azurerm_role_definition.customrole.id
 }
-*/
+
 # Creates Log Anaylytics Workspace
 resource "azurerm_log_analytics_workspace" "log_analytics_ws" {
   name                = var.lognalyticworkspace
@@ -340,7 +339,7 @@ resource "azurerm_eventhub_authorization_rule" "ad_log_auth" {
   manage              = false
 }
 
-/*
+
 ### log analytics export rule
 resource "azurerm_log_analytics_data_export_rule" "example" {
   name                    = "dataExport1"
