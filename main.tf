@@ -195,11 +195,11 @@ resource "azurerm_bastion_host" "example" {
     public_ip_address_id = azurerm_public_ip.bastionpip.id
   }
 }
+*/
 ### Create Custom role
 data "azurerm_resource_group" "rg" {
   name = azurerm_resource_group.rg.name
 }
-  */
 resource "azurerm_role_definition" "customrole" {
   name        = var.customownerrole
   scope       = data.azurerm_resource_group.rg.id
