@@ -84,7 +84,7 @@ data "azurerm_policy_definition" "disabled_policies_foundations" {
   count = length(var.disabled_policies_foundations)
   display_name =  var.disabled_policies_foundations[count.index]
 }
-*/
+
 # create Virtual network with app subnets
 resource "azurerm_virtual_network" "vnet" {
   name                = var.vnetname
@@ -106,7 +106,7 @@ resource "azurerm_subnet" "subnet2" {
 }
 
 ### Azure route table for firewall route and subnet association
-/*
+
 resource "azurerm_route_table" "rt" {
   name                = var.routetable
   location            = azurerm_resource_group.rg.location
@@ -199,6 +199,8 @@ resource "azurerm_bastion_host" "example" {
 data "azurerm_resource_group" "rg" {
   name = azurerm_resource_group.rg.name
 }
+  */
+
 resource "azurerm_role_definition" "customrole" {
   name        = var.customownerrole
   scope       = data.azurerm_resource_group.rg.id
@@ -245,7 +247,7 @@ resource "azurerm_role_definition" "customrole" {
     azurerm_resource_group.rg.id # /subscriptions/00000000-0000-0000-0000-000000000000
   ]
 }
-
+/*
 resource "azuread_group" "aad-owner" {
   display_name     = "Sandbox Owners"
   security_enabled = true
